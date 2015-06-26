@@ -4,15 +4,24 @@
 using namespace std;
 
 int
-cppsrc::get_key(string *key, int val)
+cppsrc::get_key(string *pkey, int *pval)
 {
-	cout << __FUNCTION__ << " " << *key << "\n";
+	*pkey = key;
+	*pval = ksize;	
+	cout << "Key Size " << ksize << "\n";
+	cout << __FUNCTION__ << " " << *pkey << " val " << pval << "\n";
 }
 
 int
-cppsrc::set_key(string *key, int val)
+cppsrc::set_key(string *pkey, int pval)
 {
-	cout << __FUNCTION__ << " " << *key << "\n";
+	key = *pkey;
+	ksize = pval;	
+	cout << __FUNCTION__ << " " << key << " val " << pval << "\n";
+}
+
+cppsrc::cppsrc(string& path, size_t storage_size, size_t mem_size) 
+{
 }
 
 /* 
