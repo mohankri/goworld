@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"golib"
+	"fmt"
 )
 
 func main() {
