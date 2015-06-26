@@ -1,9 +1,12 @@
 #all : libcppwrap.a
 all : libcppwrap.so
 
-CFLAGS = -std=c++11 -fPIC
+#CFLAGS = -std=c++11 -fPIC
+CFLAGS = -fPIC -I./cppsrc
 
-LDFLAGS = -shared -std=c++11 -fPIC 
+GOPATH = $(HOME)/goworld/go
+
+LDFLAGS = -shared -std=c++11 -fPIC -Wl,-rpath,$(GOPATH)/cppwrap/cppsrc -L./cppsrc -lcpp
 
 libcppwrap.so : cppwrap.o
 	g++ -o $@ $^ $(LDFLAGS)
