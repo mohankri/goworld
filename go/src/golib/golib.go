@@ -10,6 +10,7 @@ import "fmt"
 // golib_main
 
 func Golib_main() {
-	C.CCppwrap()
+	mystruct := kv_open("/tmp/test", 1024, 1024)
+	mystruct.kv_get("key1", 4)
 	fmt.Println("golib_main called")
 }
