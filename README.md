@@ -18,7 +18,9 @@ make
 The above will build dynamic C libaries
 
 cd ../../go/src/main
+
 export GOPATH=$HOME/goworld/go
+
 go build
 
 export LD_LIBRARY_PATH=$GOPATH/cppwrap
