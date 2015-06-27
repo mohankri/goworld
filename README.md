@@ -8,8 +8,11 @@ BUILD goworld
 git clone https://github.com/mohankri/goworld
 
 cd go/cppwrap/cppsrc
+
 make
+
 cd ..
+
 make
 
 The above will build dynamic C libaries
