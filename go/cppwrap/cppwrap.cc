@@ -21,13 +21,14 @@ Kvstore Copen(char *path, int ssize, int msize) {
 	return src;
 }
 
-int Cget_key(Kvstore store, char *key, int val) {
+int Cget_key(Kvstore store, char *key, int *val) {
 	cout << "Initialized as ... " << key << " val " << val << "\n";
 	cppsrc *src = (cppsrc *)store;
 	string	lkey = key;
-	src->get_key(&lkey, &val);
+	src->get_key(&lkey, val);
 	strcpy(key, lkey.c_str());
 	cout << "Get_key called... " << key << " val " << val << "\n";
+	return 0;
 }
 
 int Cset_key(Kvstore store, char *key, int val) {
@@ -36,6 +37,7 @@ int Cset_key(Kvstore store, char *key, int val) {
 	string	lkey = key;
 	cout << "Set Key " << lkey << " val " << val << "\n";
 	src->set_key(&lkey, val);
+	return 0;
 }
 
 #ifdef __cplusplus	

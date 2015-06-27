@@ -18,13 +18,14 @@ type kv_struct struct {
 	kvptr C.Kvstore
 }
 
-func (kv kv_struct) kv_get(key string, key_size int) int {
-	key = "KM"
-	key_size = 0
-	cs := C.CString(key)
+func (kv kv_struct) kv_get(key[] string, key_size int) int {
+	var k string
+	cs := C.CString(k)
 	len := C.int(key_size)
-	C.Cget_key(kv.kvptr, cs, len)
-	fmt.Println("Key Get ", C.GoString(cs), " Size ", len, kv.kvptr)
+	C.Cget_key(kv.kvptr, cs, &len)
+	//copy(key[:], C.GoString(cs))	
+	//key = C.GoString(cs)
+	fmt.Println("Key Get ", key, " Size ", len, kv.kvptr)
 	C.free(unsafe.Pointer(cs))
 	return 0
 }

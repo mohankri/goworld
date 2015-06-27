@@ -15,10 +15,10 @@ func Golib_main() {
 	mystruct1 := kv_open("/tmp/test1", 1024, 1024)
 	mystruct1.kv_put("key2", 4)
 	fmt.Println("golib_main called ", mystruct.path, mystruct1.path)
-	var key string
-	var size int
+	key := make([]string, 10)	
+	size := 0
 	mystruct1.kv_get(key, size)
 	fmt.Println("key received 1 ", key, size)
-	mystruct.kv_get(key, size)
-	fmt.Println("key received 0 ", key, size)
+	//mystruct.kv_get(key, size)
+	//fmt.Println("key received 0 ", key, size)
 }
