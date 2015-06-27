@@ -6,6 +6,7 @@ In such scenario wrapping legacy c or c++ code under the hood of a go language i
 BUILD goworld
 
 git clone https://github.com/mohankri/goworld
+
 cd go/cppwrap/cppsrc
 make
 cd ..
