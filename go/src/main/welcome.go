@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello World")
-	golib.Golib_main()
+	//golib.Golib_main()
+	fmt.Println("Reverse string ", golib.Reverse_string("Hello World"))
 }
