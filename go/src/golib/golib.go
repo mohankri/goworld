@@ -11,14 +11,19 @@ import "fmt"
 
 func Golib_main() {
 	mystruct := kv_open("/tmp/test", 1024, 1024)
-	mystruct.kv_put("key1", 4)
+	mystruct.kv_put("key1", 40000)
+	fmt.Println("PUT ", "key1", " Value ",  40000)
+
 	mystruct1 := kv_open("/tmp/test1", 1024, 1024)
 	mystruct1.kv_put("key2", 4)
-	fmt.Println("golib_main called ", mystruct.path, mystruct1.path)
-	key := make([]string, 10)	
+	fmt.Println("PUT ", "key2", " Value ",  4)
+
+	key := "KM"
 	size := 0
-	mystruct1.kv_get(key, size)
-	fmt.Println("key received 1 ", key, size)
-	//mystruct.kv_get(key, size)
-	//fmt.Println("key received 0 ", key, size)
+
+	mystruct.kv_get(&key, &size)
+	fmt.Println("\nGet ", key, size)
+
+	mystruct1.kv_get(&key, &size)
+	fmt.Println("Get ", key, size)
 }

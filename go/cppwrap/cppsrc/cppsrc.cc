@@ -8,8 +8,6 @@ cppsrc::get_key(string *pkey, int *pval)
 {
 	*pkey = key;
 	*pval = ksize;	
-	cout << "Key Size " << ksize << "\n";
-	cout << __FUNCTION__ << " " << *pkey << " val " << pval << "\n";
 }
 
 int
@@ -17,7 +15,6 @@ cppsrc::set_key(string *pkey, int pval)
 {
 	key = *pkey;
 	ksize = pval;	
-	cout << __FUNCTION__ << " " << key << " val " << pval << "\n";
 }
 
 cppsrc::cppsrc(string& path, size_t storage_size, size_t mem_size) 
